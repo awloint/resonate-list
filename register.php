@@ -2,8 +2,6 @@
 
 include 'pdo.php';
 
-if (!empty($_POST) && isset($_POST['submit'])) {
-    //Capture the POST Data
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
@@ -13,7 +11,6 @@ if (!empty($_POST) && isset($_POST['submit'])) {
     $learn = $_POST['learn'];
     $benefit = $_POST['benefit'];
 
-    try {
         //Check the Database to see if the person has registered
         $usercheck = 'SELECT * FROM resonate WHERE email=?';
         //Prepare the Query
@@ -25,9 +22,8 @@ if (!empty($_POST) && isset($_POST['submit'])) {
 
         if ($usercheckquery->rowCount() > 0) {
             //redirect to the Thank You Page
-            echo "You have already registered!";
+            echo '1';
         } else {
-            try {
                 // enter the data into the database
                 $enteruser = "INSERT into resonate (firstName, lastName, email, phone, role, story, learn, benefit) VALUES (:firstName, :lastName, :email, :phone, :role, :story, :learn, :benefit)";
                 // Prepare Query
@@ -49,15 +45,6 @@ if (!empty($_POST) && isset($_POST['submit'])) {
 
                 // Check to see if the query executed then redirect to Successful page
                 if ($enteruserquery->rowcount() > 0) {
-                    echo "Your registration was successful";
+                    echo "2";
                 }
-            } catch (PDOException $e) {
-                echo 'Error: ' .$e->getMessage();
             }
-        }
-    } catch (PDOExecution $e) {
-        echo 'Error: ' .$e->getMessage();
-    }
-} else {
-    echo 'Oga fill this form';
-}

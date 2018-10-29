@@ -12,6 +12,8 @@
 
         <!--    Loading Flat UI Pro -->
         <link rel="stylesheet" href="css/flat-ui.css">
+        <!--    Loading Sweet Alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     </head>
     <body>
@@ -27,7 +29,7 @@
             <!--    Main Form Begins-->
             <div class="row justify-content-start">
                 <div class="col" style="padding-top:40px;">
-                    <form action="register.php" method="POST">
+                    <form id="form" >
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your First Name" required>
@@ -70,7 +72,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col" style="margin-bottom:30px;">
-                                <p style="text-align:center;"><button type="submit" name="submit" formmethod="POST" class="btn btn-wide btn-info">Register</button></p>
+                                <p style="text-align:center;"><button type="submit" value="submit" name="submit" class="btn btn-wide btn-info">Register</button></p>
                             </div>
                         </div>
                     </form>
@@ -85,12 +87,14 @@
         
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
             crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
         
         <script src="scripts/flat-ui.js"></script>
+        <script src="scripts/ajax.js"></script>
         
     </body>
 </html>
