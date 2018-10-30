@@ -23,7 +23,7 @@
                     swal("Already Registered", "You have already registered for the Webinar", "warning");
                 } else {
                     swal("Success", "Your registration for the Webinar was successful", "success");
-                    window.location.replace("https://awlo.org");
+                   // window.location.replace("https://awlo.org");
                 }
             }
         });
